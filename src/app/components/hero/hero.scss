@@ -1,0 +1,257 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.hero-section {
+  padding: 120px 24px 72px 24px;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #fef2f2;
+  color: #dc2626;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
+  border: 1px solid #fecaca;
+  margin-bottom: 24px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #dc2626;
+  border-radius: 50%;
+}
+
+/* Typography */
+.hero-title {
+  font-size: 3.1rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: #111827;
+  margin: 0 0 20px 0;
+}
+
+.hero-title .highlight {
+  color: #dc2626;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 36px;
+  max-width: 560px;
+}
+
+/* Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: #111827;
+  border: 2px solid #111827;
+}
+
+.btn-outline:hover {
+  background-color: #111827;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebd56;
+  transform: translateY(-1px);
+}
+
+/* Metrics Row */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #111827;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background-color: #e5e7eb;
+}
+
+/* Image Frame Placeholder */
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-card {
+  width: 100%;
+  max-width: 380px;
+  height: 460px;
+  background-color: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-placeholder {
+  text-align: center;
+  color: #64748b;
+}
+
+.coach-icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.placeholder-text {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Floating Status */
+.floating-status {
+  position: absolute;
+  bottom: 20px;
+  left: -20px;
+  background: #111827;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+[dir="rtl"] .floating-status {
+  left: auto;
+  right: -20px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .floating-status {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  [dir="rtl"] .floating-status {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

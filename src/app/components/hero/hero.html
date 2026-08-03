@@ -1,1 +1,84 @@
-<p>hero works!</p>
+<section id="home" class="hero-section">
+  <div class="hero-container">
+    
+    <!-- Left Column: Copy & Actions -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        {{ currentLanguage === 'EN' ? 'FITNESS & STRENGTH COACH' : 'مدرب لياقة وبناء قوة' }}
+      </div>
+
+      <h1 class="hero-title">
+        @if (currentLanguage === 'EN') {
+          Helping People Achieve Their <span class="highlight">Best Physical</span> Performance.
+        } @else {
+          أساعدك على تحقيق <span class="highlight">أفضل أداء بدني</span> لك.
+        }
+      </h1>
+
+      <p class="hero-description">
+        {{ currentLanguage === 'EN' 
+          ? 'Personalized training and nutrition plans designed specifically for your goals, body type, and lifestyle. Start your transformation today.' 
+          : 'برامج تدريبية وتغذية مخصصة تصمم خصيصاً لأهدافك، طبيعة جسمك، ونمط حياتك. ابدأ رحلة التحول اليوم.' 
+        }}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-actions">
+        <button class="btn btn-primary" (click)="scrollToConsultation()">
+          {{ currentLanguage === 'EN' ? 'Get Started' : 'ابدأ الآن' }}
+        </button>
+        
+        <button class="btn btn-outline" (click)="scrollToConsultation()">
+          {{ currentLanguage === 'EN' ? 'Book Free Consultation' : 'حجز استشارة مجانية' }}
+        </button>
+
+        <button class="btn btn-whatsapp" (click)="openWhatsApp()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          {{ currentLanguage === 'EN' ? 'WhatsApp' : 'واتساب' }}
+        </button>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">{{ currentLanguage === 'EN' ? 'Clients Trained' : 'عميل متدرب' }}</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">{{ currentLanguage === 'EN' ? 'Years Experience' : 'سنوات خبرة' }}</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">{{ currentLanguage === 'EN' ? 'Success Rate' : 'نسبة النجاح' }}</span>
+        </div>
+      </div>
+    </div>
+
+   <!-- Right Column: Visual Frame -->
+<div class="hero-image-container">
+  <div class="hero-image-card">
+
+    <!-- Coach Akram Photo -->
+    <img 
+      src="../photo/AKRAM.jpeg"
+      alt="Coach Akram Ramadan" 
+      class="coach-photo" 
+    />
+       
+    <!-- Floating Badge -->
+    <div class="floating-status">
+      <span class="pulse-dot"></span>
+      {{ currentLanguage === 'EN' ? 'Accepting New Clients' : 'متاح للتدريب الآن' }}
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</section>
