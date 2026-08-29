@@ -1,1 +1,118 @@
-<p>footer works!</p>
+<footer class="site-footer">
+  <!-- Top Banner / Final CTA -->
+  <div class="footer-cta-banner">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-text">
+          <h3>
+            {{ currentLanguage === 'EN' 
+              ? 'READY TO TRANSFORM YOUR PHYSIC?' 
+              : 'جاهز لتحويل جسمك ولياقتك البدنية؟' 
+            }}
+          </h3>
+          <p>
+            {{ currentLanguage === 'EN' 
+              ? 'Take the first step towards your fitness goals today with personalized coaching.' 
+              : 'ابدأ خطوتك الأولى اليوم نحو أهدافك الرياضية عبر تدريب مخصص بالكامل.' 
+            }}
+          </p>
+        </div>
+        <a href="#consultation" class="btn-primary">
+          <span>{{ currentLanguage === 'EN' ? 'Book Free Consultation' : 'احجز استشارتك المجانية' }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand / Coach Bio -->
+        <div class="brand-col">
+          <div class="brand-logo">
+            <span class="logo-text">AKRAM <span class="highlight">RAMADAN</span></span>
+            <span class="sub-title">{{ currentLanguage === 'EN' ? 'Fitness & Strength Coach' : 'مدرب لياقة بدنية وقوة' }}</span>
+          </div>
+          <p class="brand-desc">
+            {{ currentLanguage === 'EN' 
+              ? 'Helping individuals achieve elite physical performance through evidence-based training, custom nutrition, and relentless accountability.' 
+              : 'مساعدة الأفراد على تحقيق أفضل أداء رياضي وجسم مثالي عبر تدريب علمي وتغذية مخصصة ومتابعة مستمرة.' 
+            }}
+          </p>
+          <div class="social-pills">
+            @for (social of socialLinks; track social.name) {
+              <a [href]="social.url" target="_blank" [attr.aria-label]="social.name" class="social-pill">
+                <span class="social-icon">{{ social.icon }}</span>
+              </a>
+            }
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="links-col">
+          <h4 class="col-title">{{ currentLanguage === 'EN' ? 'Navigation' : 'روابط السريعة' }}</h4>
+          <ul class="footer-links">
+            @for (link of quickLinks; track link.labelEN) {
+              <li>
+                <a [href]="link.target">
+                  <span class="arrow">›</span>
+                  {{ currentLanguage === 'EN' ? link.labelEN : link.labelAR }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <!-- Coaching Services -->
+        <div class="links-col">
+          <h4 class="col-title">{{ currentLanguage === 'EN' ? 'Programs' : 'البرامج التدريبية' }}</h4>
+          <ul class="footer-links">
+            <li><a href="#services">{{ currentLanguage === 'EN' ? 'Online Personal Training' : 'التدريب الشخصي أونلاين' }}</a></li>
+            <li><a href="#services">{{ currentLanguage === 'EN' ? 'Nutrition Coaching' : 'تدريب التغذية الرياضية' }}</a></li>
+            <li><a href="#services">{{ currentLanguage === 'EN' ? 'Fat Loss Programs' : 'برامج حرق الدهون' }}</a></li>
+            <li><a href="#services">{{ currentLanguage === 'EN' ? 'Muscle Building' : 'برامج بناء العضلات' }}</a></li>
+            <li><a href="#services">{{ currentLanguage === 'EN' ? 'Athletic Performance' : 'تحسين الأداء الرياضي' }}</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact Hub -->
+        <div class="contact-col">
+          <h4 class="col-title">{{ currentLanguage === 'EN' ? 'Direct Contact' : 'تواصل مباشر' }}</h4>
+          <div class="contact-info">
+            <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="contact-item">
+              <span class="item-label">WhatsApp:</span>
+              <span class="item-value">+20 100 000 0000</span>
+            </a>
+            <a href="mailto:info@akramramadan.com" class="contact-item">
+              <span class="item-label">Email:</span>
+              <span class="item-value">contact&#64;akramramadan.com</span>
+            </a>
+            <div class="contact-item">
+              <span class="item-label">{{ currentLanguage === 'EN' ? 'Availability:' : 'أوقات العمل:' }}</span>
+              <span class="item-value">{{ currentLanguage === 'EN' ? 'Online Coaching Worldwide' : 'تدريب أونلاين لجميع الدول' }}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Legal & Copyright Bar -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="bottom-flex">
+        <p class="copyright">
+          © {{ currentYear }} Akram Ramadan. {{ currentLanguage === 'EN' ? 'All Rights Reserved.' : 'جميع الحقوق محفوظة.' }}
+        </p>
+        <div class="legal-links">
+          <a href="#">{{ currentLanguage === 'EN' ? 'Privacy Policy' : 'سياسة الخصوصية' }}</a>
+          <span class="divider">•</span>
+          <a href="#">{{ currentLanguage === 'EN' ? 'Terms & Conditions' : 'الشروط والأحكام' }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
