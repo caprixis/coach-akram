@@ -1,1 +1,111 @@
-<p>about works!</p>
+<section class="about-section" id="about">
+  <div class="container">
+    
+    <div class="about-grid">
+      <!-- Left Column: Coach Image Container & Stats Floating Badge -->
+      <div class="image-column">
+        <div class="photo-frame">
+          <img 
+            src="assets/AKRAM.jpeg" 
+            alt="Coach Akram Ramadan"
+            class="coach-photo"
+          >
+          <div class="photo-overlay"></div>
+          
+          <!-- Experience Badge Placeholder -->
+          <div class="experience-badge">
+            <span class="stat-number">{{ yearsOfExperience }}</span>
+            <span class="stat-label">
+              {{ currentLanguage === 'EN' ? 'Years Coaching' : 'سنوات الخبرة' }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Content, Mission, Certifications -->
+      <div class="content-column">
+        
+        <div class="section-header">
+          <span class="badge">
+            <span class="dot"></span>
+            {{ currentLanguage === 'EN' ? 'ABOUT COACH' : 'نبذة عن المدرب' }}
+          </span>
+          <h2>
+            @if (currentLanguage === 'EN') {
+              AKRAM <span class="highlight">RAMADAN</span>
+            } @else {
+              أكرم <span class="highlight">رمضان</span>
+            }
+          </h2>
+        </div>
+
+        <!-- Bio Introduction -->
+        <p class="bio-text">
+          {{ currentLanguage === 'EN' 
+            ? 'Dedicated Fitness & Strength Coach empowering individuals to break past physical plateaus, build lasting muscle, and master elite performance through science-backed nutrition and adaptive training protocols.' 
+            : 'مدرب لياقة بدنية وقوة متخصص في مساعدة الأفراد على تجاوز الحدود البدنية، بناء الكتل العضلية، وتحقيق أعلى مستويات الأداء الرياضي عبر برامج علمية وتغذية مخصصة.' 
+          }}
+        </p>
+
+        <!-- Mission & Vision Cards -->
+        <div class="mission-vision-grid">
+          <div class="info-card">
+            <div class="card-title">
+              <span class="indicator"></span>
+              <h4>{{ currentLanguage === 'EN' ? 'MY MISSION' : 'رؤيتي' }}</h4>
+            </div>
+            <p>
+              {{ currentLanguage === 'EN' 
+                ? 'To simplify fitness by creating transparent, efficient, and sustainable training systems tailored to every individual lifestyle.' 
+                : 'تبسيط مفاهيم اللياقة البدنية وإعادة صيغتها في أنظمة تدريبية مستدامة وفعالة تناسب كل أسلوب حياة.' 
+              }}
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="card-title">
+              <span class="indicator"></span>
+              <h4>{{ currentLanguage === 'EN' ? 'MY VISION' : 'رؤيتي المستقبيلة' }}</h4>
+            </div>
+            <p>
+              {{ currentLanguage === 'EN' 
+                ? 'Building a high-performance fitness community where results are driven by consistency, data, and hard work.' 
+                : 'بناء مجتمع رياضي عالي الأداء يعتمد على الالتزام، البيانات الدقيقة، والعمل الجاد للوصول للنتائج.' 
+              }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Qualifications & Certifications Section -->
+        <div class="certifications-block">
+          <h3>{{ currentLanguage === 'EN' ? 'Certifications & Credentials' : 'الشهادات المؤهلات' }}</h3>
+          
+          <div class="cert-list">
+            @for (cert of certifications; track cert.titleEN) {
+              <div class="cert-item" [class.upcoming]="cert.status === 'upcoming'">
+                <div class="cert-icon">
+                  <span class="shield-symbol">✓</span>
+                </div>
+                <div class="cert-details">
+                  <span class="cert-title">
+                    {{ currentLanguage === 'EN' ? cert.titleEN : cert.titleAR }}
+                  </span>
+                  <span class="cert-issuer">
+                    {{ currentLanguage === 'EN' ? cert.issuerEN : cert.issuerAR }}
+                  </span>
+                </div>
+                @if (cert.status === 'upcoming') {
+                  <span class="status-tag">
+                    {{ currentLanguage === 'EN' ? 'IN PROGRESS' : 'قيد الحصول' }}
+                  </span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
