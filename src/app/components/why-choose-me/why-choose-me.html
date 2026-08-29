@@ -1,1 +1,31 @@
-<p>why-choose-me works!</p>
+<section class="why-me-section" id="why-me">
+  <div class="container">
+    
+    <div class="section-header">
+      <span class="badge">
+        <span class="dot"></span>
+        {{ currentLanguage === 'EN' ? 'THE ADVANTAGE' : 'القيمة المضافة' }}
+      </span>
+      <h2>
+        @if (currentLanguage === 'EN') {
+          Why Choose <span class="highlight">Coach Akram?</span>
+        } @else {
+          لماذا تدرب مع <span class="highlight">الكابتن أكرم؟</span>
+        }
+      </h2>
+    </div>
+
+    <div class="reasons-grid">
+      @for (item of reasons; track item.id) {
+        <div class="reason-card">
+          <div class="icon-wrapper">
+            <span>{{ item.id }}</span>
+          </div>
+          <h3>{{ currentLanguage === 'EN' ? item.titleEN : item.titleAR }}</h3>
+          <p>{{ currentLanguage === 'EN' ? item.descEN : item.descAR }}</p>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

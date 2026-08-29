@@ -1,1 +1,139 @@
-<p>services works!</p>
+<section class="services-section">
+  <div class="services-container">
+    
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-dot"></span>
+        {{ currentLanguage === 'EN' ? 'TRAINING PACKAGES' : 'باغات التدريب' }}
+      </div>
+      <h2 class="section-title">
+        @if (currentLanguage === 'EN') {
+          Choose Your <span class="highlight">Transformation</span> Plan.
+        } @else {
+          اختر برنامج <span class="highlight">التحول الخاص</span> بك.
+        }
+      </h2>
+      <p class="section-subtitle">
+        {{ currentLanguage === 'EN' 
+          ? 'Tailored 1-on-1 coaching packages designed to match your specific fitness level, goals, and schedule.' 
+          : 'برامج تدريب شخصية مصممة خصيصاً لتناسب مستوى لياقتك الحالي، أهدافك، وجدولك الزمني.' 
+        }}
+      </p>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="services-grid">
+      
+      <!-- Card 1: Standard Plan -->
+      <div class="service-card">
+        <div class="card-header">
+          <span class="plan-type">{{ currentLanguage === 'EN' ? 'ONLINE COACHING' : 'تدريب أونلاين' }}</span>
+          <h3 class="plan-title">{{ currentLanguage === 'EN' ? 'Monthly Transformation' : 'التحول الشهري' }}</h3>
+          <p class="plan-desc">
+            {{ currentLanguage === 'EN' ? 'Ideal for individuals needing structured workout & meal guidance.' : 'مثالي لمن يحتاجون إلى هيكلة مخصصة للتمارين والتغذية.' }}
+          </p>
+        </div>
+
+        <ul class="plan-features">
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Customized Workout Program' : 'برنامج تدريبي مخصص' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Personalized Macro & Meal Plan' : 'خطة تغذية وسعرات مخصصة' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Weekly Progress Check-ins' : 'متابعة وتقييم أسبوعي' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'WhatsApp Support (Mon-Fri)' : 'دعم عبر الواتساب (الإثنين-الجمعة)' }}
+          </li>
+        </ul>
+
+        <div class="card-footer">
+          <button class="btn btn-outline" (click)="onSelect('Monthly Online Coaching')">
+            {{ currentLanguage === 'EN' ? 'Select Plan' : 'اختر الخطة' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2: Featured / VIP Plan -->
+      <div class="service-card featured">
+        <div class="popular-badge">
+          {{ currentLanguage === 'EN' ? 'MOST POPULAR' : 'الأكثر طلباً' }}
+        </div>
+
+        <div class="card-header">
+          <span class="plan-type">{{ currentLanguage === 'EN' ? 'HYBRID / 1-ON-1' : 'تدريب شخصي مكثف' }}</span>
+          <h3 class="plan-title">{{ currentLanguage === 'EN' ? 'VIP 3-Month Commitment' : 'باقة الـ 3 أشهر VIP' }}</h3>
+          <p class="plan-desc">
+            {{ currentLanguage === 'EN' ? 'Complete lifestyle overhaul with maximum accountability & priority access.' : 'تغيير شامل لنمط الحياة مع أعلى مستوى من المتابعة والالتزام.' }}
+          </p>
+        </div>
+
+        <ul class="plan-features">
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Everything in Monthly Plan' : 'كل مميزات الباقة الشهرية' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Form Correction via Video Review' : 'تصحيح أداء التمارين بالفيديو' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Supplement & Habit Optimization' : 'توجيه المكملات وبناء العادات' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? '24/7 Priority WhatsApp Access' : 'دعم أولوية على مدار الساعة' }}
+          </li>
+        </ul>
+
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="onSelect('VIP 3-Month Program')">
+            {{ currentLanguage === 'EN' ? 'Get Started' : 'ابدأ الآن' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3: Consultation / Custom Plan -->
+      <div class="service-card">
+        <div class="card-header">
+          <span class="plan-type">{{ currentLanguage === 'EN' ? 'CUSTOM CONSULTATION' : 'استشارة خاصة' }}</span>
+          <h3 class="plan-title">{{ currentLanguage === 'EN' ? 'Personal Assessment' : 'تقييم شخصي' }}</h3>
+          <p class="plan-desc">
+            {{ currentLanguage === 'EN' ? 'A 1-on-1 strategy call to map out your long-term fitness goals.' : 'جلسة استشارية لتحديد أهدافك واستراتيجيتك الرياضية.' }}
+          </p>
+        </div>
+
+        <ul class="plan-features">
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? '60-Minute 1-on-1 Video Call' : 'جلسة فيديو مباشرة لمدة 60 دقيقة' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Current Nutrition Analysis' : 'تحليل النظام الغذائي الحالي' }}
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            {{ currentLanguage === 'EN' ? 'Custom Action Roadmap' : 'خارطة طريق كاملة للبدء' }}
+          </li>
+        </ul>
+
+        <div class="card-footer">
+          <button class="btn btn-outline" (click)="onSelect('Custom Consultation')">
+            {{ currentLanguage === 'EN' ? 'Book Call' : 'احجز الجلسة' }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

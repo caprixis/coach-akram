@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './services.scss',
 })
 export class Services {
+@Input() currentLanguage: string = 'EN';
+  @Output() selectPackage = new EventEmitter<string>();
 
+  onSelect(packageName: string) {
+    this.selectPackage.emit(packageName);
+  }
 }
